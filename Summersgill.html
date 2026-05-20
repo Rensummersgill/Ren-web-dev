@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rehandrew Summersgill | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712; /* Deep Cyber Black base */
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 0;
+        }
+
+        /* Typography Links */
+        a {
+            color: #00D2FF; /* Cyber Blue Accent */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #66E3FF;
+        }
+
+        h1, h2, h3, h4 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #94a3b8;
+            margin-left: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .primary-btn {
+            background-color: #ffffff;
+            color: #030712;
+        }
+
+        .primary-btn:hover {
+            background-color: #e2e8f0;
+            color: #030712;
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-left: 15px;
+        }
+
+        .secondary-btn:hover {
+            border-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 160px;
+            background: linear-gradient(135deg, #030712 40%, #0B1528 75%, rgba(0, 210, 255, 0.15) 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: #00D2FF;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 35px;
+            max-width: 600px;
+        }
+
+        .hero-image-container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .hero-image {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 3/4;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: #0B1528;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .about-image {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 2/3;
+        }
+
+        .about-text p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .quick-info p {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background-color: #0B1528;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #00D2FF;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            margin-bottom: 12px;
+            color: #94a3b8;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-category li::before {
+            content: "•";
+            color: #00D2FF;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            background-color: #0B1528;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #00D2FF;
+            border: 4px solid #0B1528;
+        }
+
+        .company {
+            color: #00D2FF;
+            font-weight: 600;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .timeline-content ul {
+            list-style-type: none;
+        }
+
+        .timeline-content li {
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        /* RPG Game Section Styling */
+        .game-section {
+            background-color: #030712;
+            text-align: center;
+        }
+
+        .game-wrapper {
+            margin: 40px auto 0 auto;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #0B1528;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .game-stats {
+            font-size: 1.2rem;
+            font-weight: 700;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            background: #030712;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #rpgCanvas {
+            background-color: #030712;
+            border: 2px solid #00D2FF;
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+            display: block;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        #game-log {
+            margin-top: 15px;
+            font-family: monospace;
+            color: #94a3b8;
+            height: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* Mobile D-Pad Styling */
+        .d-pad {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            gap: 5px;
+            width: 100%;
+        }
+
+        .d-pad-middle {
+            display: flex;
+            gap: 50px;
+        }
+
+        .d-btn {
+            background-color: rgba(0, 210, 255, 0.05);
+            border: 2px solid #00D2FF;
+            color: #00D2FF;
+            border-radius: 8px;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            user-select: none; /* Prevents text selection on rapid tapping */
+            touch-action: manipulation; /* Optimizes for touch devices */
+            transition: all 0.1s ease;
+        }
+
+        .d-btn:active {
+            background-color: #00D2FF;
+            color: #030712;
+            transform: scale(0.95);
+        }
+
+        /* Hide D-Pad on screens larger than mobile (tablets/desktops) */
+        @media (min-width: 768px) {
+            .d-pad {
+                display: none;
+            }
+        }
+
+        #start-btn {
+            margin-top: 15px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Education & Contact Section */
+        .education-card {
+            background-color: #0B1528;
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 700px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .education-card p {
+            color: #94a3b8;
+        }
+
+        .contact-section {
+            background-color: #0B1528;
+            text-align: center;
+        }
+
+        .contact-sub {
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background-color: #030712;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .contact-card h3 {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-card p {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        footer {
+            background-color: #030712;
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+            color: #64748b;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Breakdown */
+        @media (max-width: 968px) {
+            .hero-grid, .about-grid, .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-image-container, .about-image-container {
+                max-width: 450px;
+                margin: 0 auto;
+            }
+            
+            .secondary-btn {
+                margin-left: 0;
+                margin-top: 15px;
+                display: block;
+                text-align: center;
+            }
+
+            .primary-btn {
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">RS</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#arcade">Arcade</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Rehandrew Summersgill</h1>
+                <p class="tagline">Technology Tester & Creative Performer</p>
+                <p class="bio">Motivated former grade 12 student specializing in technology testing with a range of performance skills. Skilled in identifying bugs and articulating issues clearly in high-pressure situations. Ready to contribute to roles that prioritize communication, teamwork, and problem-solving expertise.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn primary-btn">Get In Touch</a>
+                    <a href="#experience" class="btn secondary-btn">View Work</a>
+                </div>
+            </div>
+            <div 
+            <div class="about-text">
+                <h2>A Diverse Skill Set</h2>
+                <p>Bridging the gap between meticulous technical analysis and expressive creative performance. From deep-diving into codebases for bug detection to high-endurance physical and dramatic arts, I approach every challenge with precision and an exceptional work ethic.</p>
+                <div class="quick-info">
+                    <p><strong>Location:</strong> Johannesburg, South Africa</p>
+                    <p><strong>Languages:</strong> English, Afrikaans</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>Core Expertise & Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Technical & Testing</h3>
+                    <ul>
+                        <li>Bug-finding & Detailed Issue Reporting</li>
+                        <li>HTML 5 / CSS & Website Design</li>
+                        <li>Software Proficiency (Office 365, Google Workspace)</li>
+                        <li>Digital Filing & Record Management</li>
+                        <li>Technical Troubleshooting</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Performance & Endurance</h3>
+                    <ul>
+                        <li>Drama & Choir</li>
+                        <li>Boxing</li>
+                        <li>Marathon Running</li>
+                        <li>High Endurance & Strong Work Ethic</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Professional & Administrative</h3>
+                    <ul>
+                        <li>Professional Communication & Phone Etiquette</li>
+                        <li>Business Writing & Copywriting</li>
+                        <li>Analytical Thinking & Problem Solving</li>
+                        <li>Confidentiality & Discretion</li>
+                        <li>Customer Service & Interpersonal Relations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2>Work History</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <h4>Merchandiser</h4>
+                        <p class="company">Rickie | Johannesburg</p>
+                        <p class="date">2025-01 - 2026-11</p>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>Handled packaging of stationery items for customer orders accurately.</li>
+                            <li>Contributed to delivery processes to maintain schedule adherence.</li>
+                            <li>Engaged in customer service efforts to provide responsive solutions.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <h4>Preschool Volunteer</h4>
+                        <p class="company">Hillary Rinkwest | Johannesburg</p>
+                        <p class="date">2021-01 - 2021-04</p>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>Enhanced children's learning experiences by incorporating creative activities into daily lesson plans.</li>
+                            <li>Promoted literacy skills through engaging storytime sessions, fostering a love for reading.</li>
+                            <li>Assisted teachers in creating a safe environment that nurtures social-emotional development.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <h4>App Tester (Freelance)</h4>
+                        <p class="company">ABSA | Johannesburg</p>
+                        <p class="date">2019-06 - 2019-06</p>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>Identified and recorded software bugs, performance glitches, and user experience challenges.</li>
+                            <li>Tested new mobile application pre-releases to confirm operational readiness.</li>
+                            <li>Reported issues with detailed suggestions for software enhancements.</li>
+                            <li>Maintained user-friendly interfaces across various devices to ensure stability.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="arcade" class="game-section">
+        <div class="container">
+            <h2>Cyber QA: The RPG</h2>
+            <p class="contact-sub">Step into the mainframe. Use the D-pad (on mobile) or arrow keys (on PC) to move, bump into red bugs to attack, and grab yellow patches to heal!</p>
+            
+            <div class="game-wrapper">
+                <div class="game-stats">
+                    <span id="rpg-level" style="color: #ffffff;">LVL: 1</span> | 
+                    <span id="rpg-hp" style="color: #ff4444;">HP: 20/20</span> | 
+                    <span id="rpg-xp" style="color: #00D2FF;">XP: 0/10</span>
+                </div>
+                
+                <canvas id="rpgCanvas" width="400" height="400"></canvas>
+                <div id="game-log">System Ready. Awaiting commands...</div>
+
+                <div class="d-pad">
+                    <button class="d-btn" onclick="movePlayer(0, -1)">▲</button>
+                    <div class="d-pad-middle">
+                        <button class="d-btn" onclick="movePlayer(-1, 0)">◀</button>
+                        <button class="d-btn" onclick="movePlayer(1, 0)">▶</button>
+                    </div>
+                    <button class="d-btn" onclick="movePlayer(0, 1)">▼</button>
+                </div>
+
+                <button id="start-btn" class="btn primary-btn" onclick="startRPG()">Initialize System</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="education-section">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-card">
+                <h3>High School: NSC Qualifications or equivalent</h3>
+                <p>Completed with a solid foundation in both technical competencies and expressive performance art forms.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p class="contact-sub">Available for freelance technical testing, web development opportunities, and creative projects.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p><a href="mailto:rensummersgill@gmail.com">rensummersgill@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>Phone</h3>
+                    <p><a href="tel:+27678466604">067 846 6604</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>Location</h3>
+                    <p>Johannesburg, South Africa 1829</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Summersgill. R. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById("rpgCanvas");
+        const ctx = canvas.getContext("2d");
+        
+        const lvlDisplay = document.getElementById("rpg-level");
+        const hpDisplay = document.getElementById("rpg-hp");
+        const xpDisplay = document.getElementById("rpg-xp");
+        const logDisplay = document.getElementById("game-log");
+
+        const gridSize = 20;
+        const tiles = canvas.width / gridSize;
+
+        let player = { x: 10, y: 10, hp: 20, maxHp: 20, atk: 5, xp: 0, level: 1 };
+        let enemies = [];
+        let items = [];
+        let gameActive = false;
+
+        function startRPG() {
+            player = { x: 10, y: 10, hp: 20, maxHp: 20, atk: 5, xp: 0, level: 1 };
+            enemies = [];
+            items = [];
+            gameActive = true;
+            
+            spawnEntities();
+            updateUI();
+            drawGrid();
+            
+            document.getElementById("start-btn").textContent = "Restart Simulation";
+            logDisplay.textContent = "Entered the mainframe. Hunt the bugs!";
+            
+            // Add keyboard listener
+            document.removeEventListener("keydown", handleInput);
+            document.addEventListener("keydown", handleInput);
+        }
+
+        function spawnEntities() {
+            for(let i = 0; i < 5; i++) {
+                enemies.push({
+                    x: Math.floor(Math.random() * tiles),
+                    y: Math.floor(Math.random() * tiles),
+                    hp: 10,
+                    atk: 3
+                });
+            }
+            for(let i = 0; i < 3; i++) {
+                items.push({
+                    x: Math.floor(Math.random() * tiles),
+                    y: Math.floor(Math.random() * tiles)
+                });
+            }
+        }
+
+        function handleInput(e) {
+            if (!gameActive) return;
+
+            let dx = 0; let dy = 0;
+            if (e.keyCode === 37) dx = -1; // Left
+            else if (e.keyCode === 38) dy = -1; // Up
+            else if (e.keyCode === 39) dx = 1; // Right
+            else if (e.keyCode === 40) dy = 1; // Down
+            else return;
+
+            e.preventDefault(); 
+            movePlayer(dx, dy);
+        }
+
+        function movePlayer(dx, dy) {
+            // Stops movement if game hasn't started or player is dead
+            if (!gameActive) {
+                logDisplay.textContent = "Please Initialize System first.";
+                return; 
+            }
+
+            let newX = player.x + dx;
+            let newY = player.y + dy;
+
+            // Wall Collision
+            if (newX < 0 || newX >= tiles || newY < 0 || newY >= tiles) {
+                logDisplay.textContent = "Firewall blocked your path.";
+                return;
+            }
+
+            // Enemy Collision (Attack)
+            let enemyIndex = enemies.findIndex(e => e.x === newX && e.y === newY);
+            if (enemyIndex !== -1) {
+                combat(enemyIndex);
+                return;
+            }
+
+            // Item Collision (Heal)
+            let itemIndex = items.findIndex(i => i.x === newX && i.y === newY);
+            if (itemIndex !== -1) {
+                player.hp = Math.min(player.maxHp, player.hp + 10);
+                items.splice(itemIndex, 1);
+                logDisplay.textContent = "System Patch applied! Recovered HP.";
+                updateUI();
+            }
+
+            // Move
+            player.x = newX;
+            player.y = newY;
+            drawGrid();
+        }
+
+        function combat(index) {
+            let enemy = enemies[index];
+            
+            enemy.hp -= player.atk;
+            logDisplay.textContent = `You hit the Bug for ${player.atk} damage!`;
+
+            if (enemy.hp <= 0) {
+                logDisplay.textContent = "Bug eliminated! Gained 5 XP.";
+                enemies.splice(index, 1);
+                gainXP(5);
+                
+                if (enemies.length < 2) spawnEntities();
+            } else {
+                player.hp -= enemy.atk;
+                logDisplay.textContent = `Bug fights back! Took ${enemy.atk} damage.`;
+                if (player.hp <= 0) {
+                    gameActive = false;
+                    logDisplay.textContent = "SYSTEM FAILURE. You have been terminated.";
+                }
+            }
+            
+            updateUI();
+            drawGrid();
+        }
+
+        function gainXP(amount) {
+            player.xp += amount;
+            if (player.xp >= player.level * 10) {
+                player.xp -= (player.level * 10);
+                player.level++;
+                player.maxHp += 5;
+                player.hp = player.maxHp;
+                player.atk += 2;
+                logDisplay.textContent = `LEVEL UP! You are now Level ${player.level}.`;
+            }
+        }
+
+        function updateUI() {
+            lvlDisplay.textContent = `LVL: ${player.level}`;
+            hpDisplay.textContent = `HP: ${player.hp}/${player.maxHp}`;
+            xpDisplay.textContent = `XP: ${player.xp}/${player.level * 10}`;
+        }
+
+        function drawGrid() {
+            ctx.fillStyle = "#030712";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            if (!gameActive && player.hp <= 0) {
+                ctx.fillStyle = "#ff4444";
+                ctx.font = "bold 24px 'Inter', sans-serif";
+                ctx.textAlign = "center";
+                ctx.fillText("SYSTEM FAILURE", canvas.width / 2, canvas.height / 2);
+                return;
+            }
+
+            ctx.fillStyle = "#eab308";
+            items.forEach(item => {
+                ctx.fillRect(item.x * gridSize, item.y * gridSize, gridSize - 2, gridSize - 2);
+            });
+
+            ctx.fillStyle = "#ff4444";
+            enemies.forEach(enemy => {
+                ctx.fillRect(enemy.x * gridSize, enemy.y * gridSize, gridSize - 2, gridSize - 2);
+            });
+
+            ctx.fillStyle = "#00D2FF";
+            ctx.fillRect(player.x * gridSize, player.y * gridSize, gridSize - 2, gridSize - 2);
+        }
+    </script>
+
+</body>
+</html>
